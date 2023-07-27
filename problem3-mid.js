@@ -377,6 +377,7 @@ function listUsersWithMovies(users, movies) {
   return usersWithMoviesArray;
 }
 
+//esta funcion te hace la lista de las peliculas que coincidan con el usuario que la vio
 function moviesList(id, movies) {
   let moviesList = movies.filter(function (movie) {
     return movie.userId === id;
@@ -385,6 +386,7 @@ function moviesList(id, movies) {
   return formatMoviesList(moviesList);
 }
 
+// esta funcion se encarga de dar el formato a la lista de peliculas, para que no me devuelva un array con todos los datos sino que solo contenga el titulo de la pelicula
 function formatMoviesList(movies) {
   var moviesNames = movies.map(function (movie) {
     return movie.title;

@@ -7,7 +7,7 @@ function timeFromTheThird() {
   let differenceBetweenDates =
     actualDate.getTime() - ARGENTINA_CHAMPION_DATE.getTime();
 
-  let days = Math.floor(differenceBetweenDates / (1000 * 60 * 60 * 24)); //numero de milisegundos en un dias, el metodo floor redondea hacia abajo
+  let days = Math.floor(differenceBetweenDates / (1000 * 60 * 60 * 24)); //numero de milisegundos en dias, el metodo floor redondea hacia abajo
 
   differenceBetweenDates -= days * (1000 * 60 * 60 * 24); // a la diferencia le resto los milisegundos de los dias
 
