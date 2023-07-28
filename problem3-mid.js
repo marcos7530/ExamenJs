@@ -370,14 +370,40 @@ function listUsersWithMovies(users, movies) {
     return {
       name: user.name,
       email: user.email,
+      address: `${user.address.street},${user.address.suite},${user.address.city}`,
+      company: user.company.name,
       movies: moviesList(user.id, movies),
+      rate: calculateAvgRate(moviesListv2(user.id, movies)),
     };
   });
 
   return usersWithMoviesArray;
 }
 
-//esta funcion te hace la lista de las peliculas que coincidan con el usuario que la vio
+//calcula el rate promedio de todas las peliculas que vio el usuario
+function calculateAvgRate(peliculas) {
+  let avgRate = 0;
+
+  peliculas.forEach((pelicula) => {
+    avgRate += pelicula.rate;
+  });
+
+  avgRate = avgRate / peliculas.length;
+
+  return avgRate.toFixed(2); // .toFixed(2) limita el numero de decimales del resultado a 2
+}
+
+//esta funcion a diferencia de la otra movies list me devuelve la lista de peliculas completa,
+// incluyendo los "rate" que utilizare para calcular el "rate promedio"
+function moviesListv2(id, movies) {
+  let moviesList = movies.filter(function (movie) {
+    return movie.userId === id;
+  });
+
+  return moviesList;
+}
+
+//esta funcion devuelve la lista de las peliculas que coincidan con el usuario que la vio
 function moviesList(id, movies) {
   let moviesList = movies.filter(function (movie) {
     return movie.userId === id;
