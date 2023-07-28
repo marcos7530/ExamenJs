@@ -1,4 +1,4 @@
-let num = 603;
+let num = 30;
 
 console.log(multipleOfThree(num));
 
@@ -13,9 +13,9 @@ function multipleOfThree(number) {
     sum += parseInt(digits[i]);
   }
 
-  if (sum > 9) {
-    multipleOfThree(sum); //funcion recursiva x si el numero ingresado tiene mas de 1 digito
-  } else {
+  if (sum <= 9) {
     return sum === 3 || sum === 6 || sum === 9; //condicion para que el numero sea multiplo de 3
+  } else {
+    return multipleOfThree(sum); //funcion recursiva x si el numero ingresado tiene mas de 1 digito
   }
 }

@@ -381,14 +381,14 @@ function listUsersWithMovies(users, movies) {
 }
 
 //calcula el rate promedio de todas las peliculas que vio el usuario
-function calculateAvgRate(peliculas) {
+function calculateAvgRate(movies) {
   let avgRate = 0;
 
-  peliculas.forEach((pelicula) => {
-    avgRate += pelicula.rate;
+  movies.forEach((movie) => {
+    avgRate += movie.rate;
   });
 
-  avgRate = avgRate / peliculas.length;
+  avgRate = avgRate / movies.length;
 
   return avgRate.toFixed(2); // .toFixed(2) limita el numero de decimales del resultado a 2
 }

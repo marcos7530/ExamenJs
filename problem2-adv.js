@@ -22,7 +22,5 @@ function timeFromTheThird() {
   //numero de milisegundos en minutos
   let minutes = Math.floor(differenceBetweenDates / (1000 * 60));
 
-  console.log(
-    `Pasaron ${days} días, ${hours} horas y ${minutes} minutos desde el Domingo, 18 de diciembre de 2022`
-  );
+  return `Pasaron ${days} días, ${hours} horas y ${minutes} minutos desde el Domingo, 18 de diciembre de 2022`;
 }
