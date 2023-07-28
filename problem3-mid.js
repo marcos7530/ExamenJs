@@ -372,8 +372,8 @@ function listUsersWithMovies(users, movies) {
       email: user.email,
       address: `${user.address.street}, ${user.address.suite}, ${user.address.city}`,
       company: user.company.name,
-      movies: moviesList(user.id, movies),
-      rate: calculateAvgRate(moviesListv2(user.id, movies)),
+      movies: moviesNamesList(user.id, movies),
+      rate: calculateAvgRate(moviesListWhitDetaills(user.id, movies)),
     };
   });
 
@@ -393,9 +393,9 @@ function calculateAvgRate(peliculas) {
   return avgRate.toFixed(2); // .toFixed(2) limita el numero de decimales del resultado a 2
 }
 
-//esta funcion a diferencia de la otra movies list me devuelve la lista de peliculas completa,
+//esta funcion a diferencia de la otra moviesList me devuelve la lista de peliculas completa,
 // incluyendo los "rate" que utilizare para calcular el "rate promedio"
-function moviesListv2(id, movies) {
+function moviesListWhitDetaills(id, movies) {
   let moviesList = movies.filter(function (movie) {
     return movie.userId === id;
   });
@@ -404,17 +404,17 @@ function moviesListv2(id, movies) {
 }
 
 //esta funcion devuelve la lista de las peliculas que coincidan con el usuario que la vio
-function moviesList(id, movies) {
+function moviesNamesList(id, movies) {
   let moviesList = movies.filter(function (movie) {
     return movie.userId === id;
   });
 
-  return formatMoviesList(moviesList);
+  return formatMoviesNamesList(moviesList);
 }
 
 // esta funcion se encarga de dar el formato a la lista de peliculas, para que no me devuelva un array con todos los datos,
 // sino que solo contenga los titulos de las peliculas
-function formatMoviesList(movies) {
+function formatMoviesNamesList(movies) {
   var moviesNames = movies.map(function (movie) {
     return movie.title;
   });
