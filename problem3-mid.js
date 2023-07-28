@@ -370,7 +370,7 @@ function listUsersWithMovies(users, movies) {
     return {
       name: user.name,
       email: user.email,
-      address: `${user.address.street},${user.address.suite},${user.address.city}`,
+      address: `${user.address.street}, ${user.address.suite}, ${user.address.city}`,
       company: user.company.name,
       movies: moviesList(user.id, movies),
       rate: calculateAvgRate(moviesListv2(user.id, movies)),
