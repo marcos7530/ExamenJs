@@ -412,7 +412,8 @@ function moviesList(id, movies) {
   return formatMoviesList(moviesList);
 }
 
-// esta funcion se encarga de dar el formato a la lista de peliculas, para que no me devuelva un array con todos los datos sino que solo contenga el titulo de la pelicula
+// esta funcion se encarga de dar el formato a la lista de peliculas, para que no me devuelva un array con todos los datos,
+// sino que solo contenga los titulos de las peliculas
 function formatMoviesList(movies) {
   var moviesNames = movies.map(function (movie) {
     return movie.title;
