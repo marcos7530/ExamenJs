@@ -4,10 +4,13 @@ console.log(multipleOfThree(num));
 
 function multipleOfThree(number) {
   let sum = 0;
-  let digitos = number.toString().split(""); //hago un arreglo de los digitos ingresados
 
+  //hago un arreglo de los digitos ingresados
+  let digits = number.toString().split("");
+
+  //recorro el arreglo y sumo sus elementos
   for (let i = 0; i < digits.length; i++) {
-    sum += parseInt(digits[i]); //recorro el arreglo y sumo sus elementos
+    sum += parseInt(digits[i]);
   }
 
   if (sum > 9) {
