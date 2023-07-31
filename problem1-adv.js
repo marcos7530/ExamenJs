@@ -1,6 +1,4 @@
-let num = 30;
-
-console.log(multipleOfThree(num));
+console.log(multipleOfThree(21));
 
 function multipleOfThree(number) {
   let sum = 0;

@@ -1,11 +1,11 @@
-timeFromTheThird();
+console.log(timeFromTheThird());
 
 function timeFromTheThird() {
   const ARGENTINA_CHAMPION_DATE = new Date("2022-12-18");
-  let actualDate = new Date();
+  const ACTUAL_DATE = new Date();
 
   let differenceBetweenDates =
-    actualDate.getTime() - ARGENTINA_CHAMPION_DATE.getTime();
+    ACTUAL_DATE.getTime() - ARGENTINA_CHAMPION_DATE.getTime();
 
   //numero de milisegundos en dias, el metodo floor redondea hacia abajo
   let days = Math.floor(differenceBetweenDates / (1000 * 60 * 60 * 24));
