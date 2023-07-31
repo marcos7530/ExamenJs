@@ -363,7 +363,9 @@ let movies = [
   },
 ];
 
-console.log(listUsersWithMovies(users, movies));
+//console.log(listUsersWithMovies(users, movies));
+
+listUsersWithMovies(users, movies);
 
 function listUsersWithMovies(users, movies) {
   var usersWithMoviesArray = users.map(function (user) {

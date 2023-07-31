@@ -1,4 +1,6 @@
-console.log(timeFromTheThird());
+//console.log(timeFromTheThird());
+
+timeFromTheThird();
 
 function timeFromTheThird() {
   const ARGENTINA_CHAMPION_DATE = new Date("2022-12-18");
